@@ -2,6 +2,7 @@
     date_default_timezone_set("Asia/Taipei");
     session_start();
     $Mem=new DB("account_mem");
+    $Items=new DB("account_items");
     class DB{
         protected $dsn="mysql:host=localhost;dbname=s1090413;charset=utf8";
         protected $table="";
@@ -27,6 +28,7 @@
             if(isset($arg[1])){
                 $sql.=$arg[1];
             }
+            echo $sql;
             return $this->pdo->query($sql)->fetchAll();
         }
         function count(...$arg){
@@ -56,7 +58,6 @@
                 }else{
                     $sql.="`id`='{$id}'";
                 }
-            
             return $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         }
         function del($id){
@@ -83,7 +84,6 @@
                 $sql="insert into $this->table (`".implode("`,`",array_keys($arg))."`) values('".implode("','",$arg)."')";
             }
             print_r(array_keys($arg));
-            echo $sql;
             return $this->pdo->exec($sql);
         }
         function q($sql){
