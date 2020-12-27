@@ -8,7 +8,6 @@
         <td>時間</td>
         <?php
         $items = $Items->all(['user'=>$_SESSION['login']]);
-        print_r($items);
         foreach ($items as $key=>$item) {
         ?>
         <tr>

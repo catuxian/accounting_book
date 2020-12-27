@@ -11,6 +11,7 @@
         function __construct($table)
         {   
             $this->table=$table;
+            // $this->pdo=new PDO($this->dsn,"s1090413","s1090413");
             $this->pdo=new PDO($this->dsn,"root","");
         }
         function all(...$arg){
@@ -28,7 +29,7 @@
             if(isset($arg[1])){
                 $sql.=$arg[1];
             }
-            echo $sql;
+            // echo $sql;
             return $this->pdo->query($sql)->fetchAll();
         }
         function count(...$arg){

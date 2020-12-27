@@ -32,7 +32,7 @@ CREATE TABLE `account_items` (
   `item` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '品項名稱',
   `payment` int(24) UNSIGNED NOT NULL COMMENT '價格',
   `type` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '類別',
-  `date` date NOT NULL DEFAULT current_timestamp() COMMENT '購買時間',
+  `date` date COMMENT '購買時間',
   `user` varchar(24) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT '使用者'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

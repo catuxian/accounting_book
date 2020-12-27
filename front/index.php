@@ -1,5 +1,6 @@
 <?php
 include_once "../base.php";
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -11,6 +12,7 @@ include_once "../base.php";
 </head>
 
 <body>
+    <h1>這是<?=$_SESSION['login'];?>的記帳本</h1>
     <?php
     $do=(!empty($_GET['do']))?$_GET['do']:"main";
     $file=$do.".php";
@@ -20,6 +22,7 @@ include_once "../base.php";
         include "main.php";
     }
     ?>
+    <a href="../api/logout.php">登出</a>
 </body>
 
 </html>

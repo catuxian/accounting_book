@@ -5,9 +5,11 @@
     $pw=$_POST['pw'];
 
     if(($Mem->count(['acc'=>$acc,'pw'=>$pw]))>0){
-        $_SESSION['login']=$acc;
+        
+        $row=$Mem->all(['acc'=>$acc,'pw'=>$pw]);
+        $_SESSION['login']=$row[0]['name'];
         to("../front");
     }else{
-        to("../index.html");
+        to("../index.php?err=1");
     }
 ?>
