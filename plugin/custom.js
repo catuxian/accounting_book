@@ -12,13 +12,12 @@ function query() {
 }
 
 function create() {
-    console.log('哈囉')
     let item = $("#item").val();
     let payment = $("#payment").val();
     let type = $("#type").val();
     let date = $("#date").val();
     let user = $("#user").val();
-    console.log(item, payment, type, date, user);
+    // console.log(item, payment, type, date, user);
     $.post("api/add.php", {
         item,
         payment,
@@ -35,7 +34,15 @@ $('#add').on('click',()=>{
     })
 })
 
+function give(id){//將id傳給edit_item.php
+    $.post('api/edit_item.php', {id}, () => {
+    })
+    $.get('api/edit_item.php', (data) => {
+        $('.modal-content').html(data)
+    })
+    console.log(id)
 
+}
 
 function update(id) {
     let item = $("#edit_item").val();

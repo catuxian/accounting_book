@@ -24,7 +24,7 @@
                 <td><?= $item['date']; ?></td>
                 <td>
                     <button type="button" class="btn btn-primary" data-id="<?= $item['id']; ?>" onclick="del(<?= $item['id']; ?>)">刪除</button>
-                    <button type="button" class="btn btn-primary edit" data-id="<?= $item['id']; ?>" data-toggle="modal" data-target="#myModal" onclick="id(<?= $item['id']; ?>)">編輯</button>
+                    <button type="button" class="btn btn-primary edit" data-id="<?= $item['id']; ?>" data-toggle="modal" data-target="#myModal" onclick="give(<?= $item['id']; ?>)">編輯</button>
 
                 </td>
             </tr>
@@ -33,17 +33,3 @@
         ?>
     </tbody>
 </table>
-<script>
-    function id(id) {
-        console.log(id)
-        $.post('edit_item.php', {
-            id
-        }, () => {
-            $.get('../api/edit_item.php', (data) => {
-                console.log(data)
-                $('.modal-content').html(data)
-            })
-        })
-    }
-
-</script>
