@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>主畫面</title>
+    <link rel="stylesheet" href="plugin/style.css">
+    <link rel="stylesheet" href="plugin/bootstrap.min.css">
+    <script src="plugin/jquery-3.5.1.min.js"></script>
+    <script src="plugin/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <header id="title"></header>
+    <nav>
+
+        <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                </div>
+            </div>
+        </div>
+    </nav>
+    <h4>所有花費</h4>
+
+    <table id="list"></table>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal" id="add">
+        新增項目
+    </button>
+
+    <a href="api/logout.php">登出</a>
+    <script src="plugin/custom.js"></script>
+</body>
+
+</html>

@@ -18,5 +18,19 @@ $item = $Items->find($id);
         <option value="樂">樂</option>
     </select></div>
 <div>時間<input type="date" name='date' id='edit_date' value="<?= $item['date']; ?>"></div>
-<input type="button" value="編輯" onclick="update(<?= $item['id']; ?>)">
-<input type="button" value="取消" onclick="cl()">
+
+<?php include_once "../base.php";?>
+<div class="modal-header">
+    <h5 class="modal-title" id="exampleModalLabel">編輯內容</h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    
+    <input type="hidden" name="user" value="<?= $_SESSION['login']; ?>" id="user">
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+    <button type="button" class="btn btn-primary" data-dismiss="modal"  onclick="update(<?= $item['id']; ?>)">確定修改</button>
+</div>

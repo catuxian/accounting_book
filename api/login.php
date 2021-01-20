@@ -8,6 +8,7 @@
         
         $row=$Mem->all(['acc'=>$acc,'pw'=>$pw]);
         $_SESSION['login']=$row[0]['name'];
+        echo $_SESSION['login'];
         to("../admin.html");
     }else{
         to("../index.php?err=1");
