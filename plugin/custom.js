@@ -35,9 +35,7 @@ $('#add').on('click',()=>{
 })
 
 function give(id){//將id傳給edit_item.php
-    $.post('api/edit_item.php', {id}, () => {
-    })
-    $.get('api/edit_item.php', (data) => {
+    $.get(`api/edit_item.php?id=${id}`, (data) => {
         $('.modal-content').html(data)
     })
     console.log(id)

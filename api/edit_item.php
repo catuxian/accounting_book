@@ -1,8 +1,8 @@
 <?php
 include_once "../base.php";
-print_r($_POST);
-$id = $_POST['id'];
+$id = $_GET['id'];
 $item = $Items->find($id);
+
 ?>
 
 <h5>編輯物品</h5>
